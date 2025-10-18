@@ -1,0 +1,13 @@
+DEFINATION:
+Delete operations remove documents from a collection. MongoDB provides methods to delete single or multiple documents based on specified criteria.
+
+1> db.collection.deleteOne(filter): This method deletes the first document that matches the provided filter criteria.
+ex,
+db.users.deleteOne({ name: "John Doe" });
+
+2> db.collection.deleteMany(filter): This method deletes all documents that match the provided filter criteria.
+ex,
+ db.products.deleteMany({ category: "Electronics" });
+
+ 3> db.collection.deleteMany({}): When an empty filter {} is provided, this method deletes all documents within the collection.
+ 

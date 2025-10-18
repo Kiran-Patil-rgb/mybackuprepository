@@ -1,0 +1,29 @@
+CRUD:
+CRUD stands for Create, Read, Update, and Delete. 
+These are the four fundamental operations used to interact with and manage data in a database, including MongoDB.
+
+Create(database, collection, document)
+Read(database, collection, document)
+Update(collection, document)
+Delete(database, collection, document)
+
+1. Create (Insert)
+This operation adds new documents to a collection in MongoDB.
+Methods:
+1> db.collection.insertOne(document): Inserts a single document.
+2> db.collection.insertMany([document1, document2, ...]): Inserts multiple documents.
+
+ex,
+db.users.insertOne({ name: "Alice", age: 30, city: "New York" });
+
+
+db.collection.insertOne({object only})
+db.collection.insertMany([ array of object])
+
+db.students.insertMany([ 
+    {_id:4, name: "studnet4"},
+    {_id:5, name: "studnet5"},
+    {_id:6, name: "studnet6"},
+    {_id:7, name: "studnet7"},
+    {_id:8, name: "studnet8"}
+])

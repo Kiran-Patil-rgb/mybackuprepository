@@ -1,0 +1,28 @@
+DEFINATION:
+Update operations modify existing documents in a collection. You can specify which documents to update using a filter, and what changes to apply using update operators.
+
+1> db.collection.updateOne(filter, update, options): This method updates the first document that matches the filter criteria with the changes specified in the update document.
+ex,
+db.users.updateOne(
+      { name: "Jane Smith" },
+      { $set: { age: 32, city: "New York" } }
+    );
+
+2> db.collection.updateMany(filter, update, options): This method updates all documents that match the filter criteria with the changes specified in the update document.
+ex,
+db.products.updateMany(
+      { category: "Books" },
+      { $inc: { price: 5 } } // Increment the price by 5
+    );
+
+3> db.collection.replaceOne(filter, replacement, options): This method replaces a single document matching the filter with the entirely new replacement document.
+ex,
+db.users.replaceOne(
+      { name: "Old User" },
+      { name: "New User", email: "newuser@example.com" }
+    );
+
+    Key Concepts:
+1> Filter: A query document that specifies which documents to target for deletion or update. This uses the same syntax as read operations.
+2> Update Operators: Special operators (e.g., $set, $inc, $unset, $push) used within the update document to define how fields should be modified.
+3> Atomicity: All write operations in MongoDB are atomic at the document level, meaning an update or delete operation on a single document is either fully completed or completely rolled back.

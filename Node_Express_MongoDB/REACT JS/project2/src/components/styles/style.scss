@@ -1,0 +1,20 @@
+#comp1 {
+    color: red;
+    background-color: grey;
+    >ul {
+        padding: 5rem !important;
+        >li {
+            background-color: black;
+            +li {
+                color: aqua;
+                background-color: black;
+                &:hover{
+                    color: white;
+                }
+                &::after{
+                    content: "some data";
+                }
+            }
+        }
+    }
+}
